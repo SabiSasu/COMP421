@@ -2,7 +2,7 @@
 -- Make sure to terminate each statement with a semicolon (;)
 
 -- LEAVE this statement on. It is required to connect to your database.
-CONNECT TO cs421;
+--CONNECT TO cs421;
 
 -- Remember to put the INSERT statements for the tables with foreign key references
 --    ONLY AFTER the parent tables!
@@ -39,14 +39,15 @@ INSERT INTO hospital(location_name) VALUES
 ;
 
 INSERT INTO PERSON(phealth_ins_num, pname, pgender, pdob, pstreet_addr, pcity_addr, pphone, ppostal, pdate_registered, pcategory) VALUES
-('123Pol', 'Paul Pol', 'M', '1990-03-02', '123, street street', 'Montreal', 111222333, 'g2h3j4', '01-01-2021', 'Physical proximity to second priority'),
-('124Pol', 'Tiny Pol', 'M', '2015-05-01', '123, street street', 'Montreal', 111222333, 'g2h3j4', '01-01-2021', 'Children below 10'),
-('125Pol', 'Paula Plante Pol', 'F', '1994-01-09', '123, street street', 'Montreal', 111222333, 'g2h3j4', '01-01-2021', 'Teachers'),
-('126Pol', 'Old Pol', 'M', '1945-01-01', '123, street street', 'Montreal', 111222333, 'g2h3j4', '01-01-2021', 'Elderly (>= 65)'),
-('123King', 'Stephen King', 'M', '1979-03-02', '149, street street', 'Montreal', 111222444, 'g2h3j5', '08-01-2021', 'Everybody else'),
-('127Pol', 'Paul Pol2', 'M', '1990-03-02', '123, street street', 'Montreal', 111222333, 'g2h3j4', '01-01-2021', 'Essential Service Workers'),
-('128Pol', 'Paul Pol3', 'M', '1990-03-02', '123, street street', 'Montreal', 111222333, 'g2h3j4', '01-01-2021', 'Health Care workers'),
-('123Doe', 'Jane Doe', 'F', '1990-03-02', '123, street street', 'Montreal', 111222333, 'g2h3j4', '01-01-2021', 'Physical proximity to second priority')
+('123Pol', 'Paul Pol', 'M', '1990-03-02', '123, street street', 'Montreal', '111222333', 'g2h3j4', '01-01-2021', 'Physical proximity to second priority'),
+('124Pol', 'Tiny Pol', 'M', '2015-05-01', '123, street street', 'Montreal', '111222333', 'g2h3j4', '01-01-2021', 'Children below 10'),
+('125Pol', 'Paula Plante Pol', 'F', '1994-01-09', '123, street street', 'Montreal', '111222333', 'g2h3j4', '01-01-2021', 'Teachers'),
+('126Pol', 'Old Pol', 'M', '1945-01-01', '123, street street', 'Montreal', '111222333', 'g2h3j4', '01-01-2021', 'Elderly (>= 65)'),
+('123King', 'Stephen King', 'M', '1979-03-02', '149, street street', 'Montreal', '111222444', 'g2h3j5', '08-01-2021', 'Everybody else'),
+('127Pol', 'Paul Pol2', 'M', '1990-03-02', '123, street street', 'Montreal', '111222333', 'g2h3j4', '01-01-2021', 'Essential Service Workers'),
+('128Pol', 'Paul Pol3', 'M', '1990-03-02', '123, street street', 'Montreal', '111222333', 'g2h3j4', '01-01-2021', 'Health Care workers'),
+('123Doe', 'Jane Doe', 'F', '1990-03-02', '123, street street', 'Montreal', '1112223333', 'g2h3j4', '01-01-2021', 'Physical proximity to second priority'),
+('124Doe', 'Isaac Doe', 'M', '2001-02-09', '123, street street', 'Montreal', '1112223334', 'g2h3j4', '03-18-2021', 'Teachers')
 ;
 
 INSERT INTO batch(vname,batch_no,bdate_expire,bdate_manufactured,bvials_quantity,blocation_name) values
@@ -120,3 +121,7 @@ INSERT INTO TIMESLOT(tslot,ttime,tdate,locname,health_ins_num,tdate_allocated,vn
 (11, '13:05:00', '2021-01-07', 'Jewish General', '125Pol', '2021-01-05', 'Pfizer-BioNTech', 1, 6, 12345),
 (12, '13:00:00', '2021-03-20', 'Jewish General', '126Pol', '2021-01-20','Pfizer-BioNTech', 1, 7, 12345)
 ;
+
+commit;
+
+Select * from Person;

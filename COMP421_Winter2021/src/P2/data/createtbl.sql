@@ -2,7 +2,7 @@
 -- Make sure to terminate each statement with a semicolon (;)
 
 -- LEAVE this statement on. It is required to connect to your database.
-CONNECT TO cs421;
+--CONNECT TO cs421;
 
 -- Remember to put the create table ddls for the tables with foreign key references
 --    ONLY AFTER the parent tables has already been created.
@@ -24,7 +24,7 @@ CREATE TABLE PERSON
     pdob             DATE NOT NULL,
     pstreet_addr     VARCHAR(30),
     pcity_addr       VARCHAR(30),
-    pphone           INTEGER,
+    pphone           VARCHAR(10),
     ppostal          VARCHAR(6),
     pdate_registered DATE,
     pcategory        VARCHAR(50) NOT NULL,
@@ -107,7 +107,7 @@ CREATE TABLE TIMESLOT
     vname           VARCHAR(30) DEFAULT NULL,
     batchno         INTEGER DEFAULT NULL,
     vialid          INTEGER DEFAULT NULL,
-    licensenum      INTEGER NOT NULL,
+    licensenum      INTEGER DEFAULT NULL,
     PRIMARY KEY (tslot, ttime, tdate, locname),
     FOREIGN KEY (locname, tdate, licensenum) REFERENCES NURSEASSIG (locname, vdate, licensenum),
     FOREIGN KEY (health_ins_num) REFERENCES PERSON (phealth_ins_num),
